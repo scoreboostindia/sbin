@@ -1,0 +1,468 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ScoreBoost India – Improve Your Credit Score</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+:root{
+  --green-dark:#0a3d2e;
+  --green-mid:#0f6e56;
+  --green-light:#1D9E75;
+  --green-pale:#E1F5EE;
+  --amber:#EF9F27;
+  --white:#ffffff;
+  --off-white:#f8faf9;
+  --text-dark:#0a1a14;
+  --text-muted:#5a7a6e;
+  --border:#d0e8de;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  font-family:'DM Sans',sans-serif;
+  background:var(--white);
+  color:var(--text-dark);
+  overflow-x:hidden;
+}
+
+h1,h2,h3,h4{
+  font-family:'Syne',sans-serif;
+}
+
+/* NAVBAR */
+
+nav{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:70px;
+  background:rgba(10,61,46,0.96);
+  backdrop-filter:blur(10px);
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:0 6%;
+  z-index:1000;
+}
+
+.logo{
+  color:white;
+  font-size:1.5rem;
+  font-weight:800;
+  text-decoration:none;
+}
+
+.logo span{
+  color:var(--amber);
+}
+
+.nav-links{
+  display:flex;
+  gap:2rem;
+}
+
+.nav-links a{
+  color:rgba(255,255,255,0.75);
+  text-decoration:none;
+  transition:0.3s;
+}
+
+.nav-links a:hover{
+  color:var(--amber);
+}
+
+.nav-btn{
+  background:var(--amber);
+  color:var(--green-dark);
+  padding:10px 20px;
+  border-radius:50px;
+  text-decoration:none;
+  font-weight:700;
+}
+
+/* HERO */
+
+.hero{
+  min-height:100vh;
+  background:var(--green-dark);
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  padding:120px 6% 80px;
+  position:relative;
+}
+
+.badge{
+  background:rgba(239,159,39,0.15);
+  border:1px solid rgba(239,159,39,0.3);
+  color:var(--amber);
+  width:fit-content;
+  padding:8px 16px;
+  border-radius:50px;
+  margin-bottom:20px;
+  font-size:0.85rem;
+  font-weight:700;
+}
+
+.hero h1{
+  color:white;
+  font-size:clamp(2.5rem,6vw,5rem);
+  line-height:1.1;
+  max-width:700px;
+  margin-bottom:20px;
+}
+
+.hero h1 span{
+  color:var(--amber);
+}
+
+.hero p{
+  color:rgba(255,255,255,0.7);
+  font-size:1.1rem;
+  line-height:1.8;
+  max-width:600px;
+  margin-bottom:35px;
+}
+
+.hero-buttons{
+  display:flex;
+  gap:1rem;
+  flex-wrap:wrap;
+}
+
+.btn-primary{
+  background:var(--amber);
+  color:var(--green-dark);
+  padding:14px 28px;
+  border-radius:50px;
+  text-decoration:none;
+  font-weight:700;
+}
+
+.btn-outline{
+  border:1px solid rgba(255,255,255,0.3);
+  color:white;
+  padding:14px 28px;
+  border-radius:50px;
+  text-decoration:none;
+}
+
+/* SECTIONS */
+
+section{
+  padding:90px 6%;
+}
+
+.section-tag{
+  background:var(--green-pale);
+  color:var(--green-mid);
+  padding:8px 16px;
+  border-radius:50px;
+  display:inline-block;
+  margin-bottom:15px;
+  font-size:0.8rem;
+  font-weight:700;
+}
+
+.section-title{
+  font-size:clamp(2rem,4vw,3rem);
+  margin-bottom:20px;
+}
+
+.section-sub{
+  color:var(--text-muted);
+  line-height:1.8;
+  max-width:700px;
+  margin-bottom:50px;
+}
+
+/* SERVICES */
+
+.services{
+  background:var(--off-white);
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:25px;
+}
+
+.card{
+  background:white;
+  padding:30px;
+  border-radius:18px;
+  border:1px solid var(--border);
+  transition:0.3s;
+}
+
+.card:hover{
+  transform:translateY(-5px);
+}
+
+.card-icon{
+  font-size:2rem;
+  margin-bottom:15px;
+}
+
+.card h3{
+  margin-bottom:10px;
+}
+
+.card p{
+  color:var(--text-muted);
+  line-height:1.7;
+}
+
+/* CTA */
+
+.cta{
+  background:var(--green-dark);
+  text-align:center;
+  color:white;
+}
+
+.cta p{
+  max-width:600px;
+  margin:20px auto 40px;
+  color:rgba(255,255,255,0.7);
+  line-height:1.8;
+}
+
+.cta-buttons{
+  display:flex;
+  justify-content:center;
+  gap:1rem;
+  flex-wrap:wrap;
+}
+
+.whatsapp-btn{
+  background:#25D366;
+  color:white;
+  text-decoration:none;
+  padding:14px 28px;
+  border-radius:50px;
+  font-weight:700;
+}
+
+/* FOOTER */
+
+footer{
+  background:#06100c;
+  color:rgba(255,255,255,0.6);
+  padding:30px 6%;
+  text-align:center;
+}
+
+footer p{
+  margin-top:10px;
+  font-size:0.9rem;
+  line-height:1.7;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+  .nav-links{
+    display:none;
+  }
+
+  .hero{
+    padding-top:140px;
+  }
+
+  .hero-buttons{
+    flex-direction:column;
+  }
+
+  .btn-primary,
+  .btn-outline,
+  .whatsapp-btn{
+    width:100%;
+    text-align:center;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAV -->
+
+<nav>
+  <a href="#" class="logo">Score<span>Boost</span> India</a>
+
+  <div class="nav-links">
+    <a href="#services">Services</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+  </div>
+
+  <a href="#contact" class="nav-btn">Get Started</a>
+</nav>
+
+<!-- HERO -->
+
+<section class="hero">
+
+  <div class="badge">
+    India's Credit Score Education Platform
+  </div>
+
+  <h1>
+    Boost Your <span>CIBIL Score</span> & Unlock Better Loans
+  </h1>
+
+  <p>
+    Learn how credit scores work in India with simple guides, smart strategies,
+    and practical resources designed to help you improve your financial future.
+  </p>
+
+  <div class="hero-buttons">
+    <a href="#services" class="btn-primary">Explore Services</a>
+    <a href="#contact" class="btn-outline">Contact Us</a>
+  </div>
+
+</section>
+
+<!-- SERVICES -->
+
+<section class="services" id="services">
+
+  <div class="section-tag">
+    WHAT WE OFFER
+  </div>
+
+  <h2 class="section-title">
+    Everything You Need to Improve Your Credit Score
+  </h2>
+
+  <p class="section-sub">
+    Practical education, community support, and step-by-step plans to help you
+    understand and improve your CIBIL score in India.
+  </p>
+
+  <div class="grid">
+
+    <div class="card">
+      <div class="card-icon">📚</div>
+      <h3>Credit Education</h3>
+      <p>
+        Learn how credit scores work, what affects them,
+        and how to avoid common mistakes.
+      </p>
+    </div>
+
+    <div class="card">
+      <div class="card-icon">📈</div>
+      <h3>Score Improvement Plans</h3>
+      <p>
+        Action-based plans designed to help improve your score step by step.
+      </p>
+    </div>
+
+    <div class="card">
+      <div class="card-icon">💳</div>
+      <h3>Credit Card Guidance</h3>
+      <p>
+        Understand secured and unsecured cards and how to use them wisely.
+      </p>
+    </div>
+
+    <div class="card">
+      <div class="card-icon">💬</div>
+      <h3>WhatsApp Community</h3>
+      <p>
+        Join our growing community for weekly tips and updates.
+      </p>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ABOUT -->
+
+<section id="about">
+
+  <div class="section-tag">
+    ABOUT
+  </div>
+
+  <h2 class="section-title">
+    Why ScoreBoost India?
+  </h2>
+
+  <p class="section-sub">
+    Many Indians struggle with their credit score simply because nobody explains
+    it clearly. ScoreBoost India simplifies credit education using practical,
+    easy-to-understand guidance designed specifically for the Indian financial system.
+  </p>
+
+</section>
+
+<!-- CONTACT -->
+
+<section class="cta" id="contact">
+
+  <div class="section-tag">
+    CONTACT
+  </div>
+
+  <h2 class="section-title">
+    Ready to Improve Your Credit Score?
+  </h2>
+
+  <p>
+    Join our community and start learning the smart way to build your credit profile.
+  </p>
+
+  <div class="cta-buttons">
+
+    <a href="https://chat.whatsapp.com/" class="whatsapp-btn">
+      Join WhatsApp Community
+    </a>
+
+    <a href="mailto:scoreboostindia@gmail.com" class="btn-primary">
+      Email Us
+    </a>
+
+  </div>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+
+  <h3>ScoreBoost India</h3>
+
+  <p>
+    Educational platform focused on helping Indians understand and improve their credit score.
+  </p>
+
+  <p>
+    © 2026 ScoreBoost India. All Rights Reserved.
+  </p>
+
+</footer>
+
+</body>
+</html>
+```
